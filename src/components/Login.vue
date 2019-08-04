@@ -65,7 +65,7 @@
                     };
                     // await用来简化promise数据 {data:res}用来解构赋值对象
                     const { data: res } = await this.$http.post('/login', this.loginForm)
-                    console.log(res)
+                    // console.log(res)
                     if (res.meta.status !== 200) {
                         return this.$message.error('登录失败')
                     } else {
