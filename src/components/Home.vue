@@ -3,8 +3,8 @@
         <!-- 上面头部区域 -->
         <el-header>
             <div class="header-left">
-                <img src="../assets/heima.png" alt="">
-                <span>RGS物流后台管理系统</span>
+                <img src="../assets/111.jpg" alt="">
+                <span>鸭子姐姐后台管理系统</span>
             </div>
             <el-button type="info" v-on:click="loginout" class="info">退出登录</el-button>
         </el-header>
@@ -14,11 +14,8 @@
             <el-aside v-bind:width="isCollapse?'65px':'200px'">
                 <!-- 折叠按钮 -->
                 <div class="toggle-button" v-on:click="togglecollapse">
-                    <el-switch
-                        v-model="value2"
-                        active-color="#C0CCDA"
-                        inactive-color="#13ce66">
-                    </el-switch>
+                    <!-- 开关 -->
+                    <el-switch v-model="value2"></el-switch>
                 </div>
                 <el-menu background-color="#333744" text-color="#fff" active-text-color="#409eff" v-bind:unique-opened="true" v-bind:collapse="isCollapse" v-bind:collapse-transition="false" v-bind:router="true" v-bind:default-active="activePath">
                     <!-- 这是一级菜单 -->
@@ -61,7 +58,6 @@
                     '145':'iconfont icon-baobiao'
                 },
                 isCollapse:false,
-                value1: true,
                 value2: true,
                 activePath:''
             }
@@ -83,7 +79,7 @@
                         return this.$message.error(res.meta.msg)
                     }else{
                         this.meunlist=res.data.data
-                        console.log(this.meunlist);
+                        // console.log(this.meunlist);
                     }
                 })
             },
@@ -113,6 +109,9 @@
                 font-size: 20px;
                 span{
                     margin-left: 15px;
+                };
+                img{
+                    border-radius: 50%
                 }
             }
         }

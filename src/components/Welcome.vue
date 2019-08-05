@@ -1,6 +1,6 @@
 <template>
     <div>
-        welcome
+        <h2>鸭子姐姐我爱你</h2>
     </div>
 </template>
 

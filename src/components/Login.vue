@@ -18,8 +18,8 @@
                 </el-form-item>
                 <!-- 按钮区域 -->
                 <el-form-item class="btns">
-                    <el-button type="primary" v-on:click="login" class="login">登录</el-button><br/>
-                    <el-button type="info" v-on:click="setLoginRef" class="info">重置</el-button>
+                    <el-button type="primary" v-on:click="login" class="login">我爱你</el-button><br/>
+                    <el-button type="info" v-on:click="setLoginRef" class="info">鸭子姐姐</el-button>
                 </el-form-item>
             </el-form>
         </div>
@@ -31,14 +31,14 @@
     export default {
         data() {
             return {
-                // 输入框表单数据
+                // 添加输入框表单数据
                 loginForm:{
                     username:'admin',
                     password:'123456'
                 },
-                // 判断数据格式
+                // 验证判断数据规则格式
                 loginRules:{
-                    uesrname:[
+                    username:[
                         { required: true, message: '请输入用户名', trigger: 'blur' },
                         { min: 3, max: 15, message: '长度在 3 到 15 个字符', trigger: 'blur' }
                     ],
