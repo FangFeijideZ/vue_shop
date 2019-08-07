@@ -73,7 +73,7 @@
                     };
                     // 登录成功后把后台返回的token设置到本地存储里面下次请求的时候携带有token就可以不用登录进主页
                     window.sessionStorage.setItem('token', res.data.token)
-                    // 编程式导航用作路由
+                    // 编程式导航用作路由跳转
                     this.$router.push('/home')
                 })
             }

@@ -14,6 +14,7 @@ Vue.prototype.$http = axios;
 // 设置请求拦截器,添加token
 axios.interceptors.request.use(config => {
     // console.log(config);
+    // 获取登录过后生成的token值,添加到axios请求头里面,这样每次请求都会自动携带
     config.headers.Authorization = window.sessionStorage.getItem('token');
     return config
 })
