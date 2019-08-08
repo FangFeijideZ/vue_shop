@@ -49,7 +49,9 @@
     export default {
         data() {
             return {
+                // 所有菜单列表
                 meunlist:[],
+                // 导航栏的ico图标
                 iconsObj:{
                     '125':'iconfont icon-user',
                     '103':'iconfont icon-tijikongjian',
@@ -57,8 +59,11 @@
                     '102':'iconfont icon-danju',
                     '145':'iconfont icon-baobiao'
                 },
+                // 切换导航栏的状态,根据状态切换时设置不同的宽度
                 isCollapse:false,
+                // 初始化的时候开关的状态
                 value2: true,
+                // 导航栏切换时的动态路由
                 activePath:''
             }
         },
@@ -66,12 +71,14 @@
             this.getMenuList()
         },
         methods:{
+            // 退出登录是清除token,然后跳转到登录页面
             loginout(){
                 // 清空本地存储中的token
                 window.sessionStorage.clear();
                 // 清空后跳转到login登录页
                 this.$router.push('/login')
             },
+            // 获取所有菜单列表
             getMenuList(){
                 this.$http.get('/menus').then(res=>{
                     // console.log(res);
@@ -83,9 +90,11 @@
                     }
                 })
             },
+            // 关闭或打开侧边栏
             togglecollapse(){
                 this.isCollapse = !this.isCollapse
             },
+            // 导航栏切换时的动态路由
             navState(activePath){
                 this.activePath=activePath
             }

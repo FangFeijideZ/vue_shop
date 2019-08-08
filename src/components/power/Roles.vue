@@ -13,6 +13,7 @@
             <el-button type="primary" @click="addDialogVisible=true">添加角色</el-button>
             <!-- 角色列表 -->
             <el-table :data="rolesList" border stripe>
+                <!-- 权限 -->
                 <el-table-column type="expand">
                     <template slot-scope="scope">
                         <!-- 一级权限 -->
