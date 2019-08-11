@@ -101,7 +101,7 @@
             return {
                 // 进度条的绑定
                 activeName:'0',
-                // 添加商品发生请求要用的表单数据
+                // 添加商品发送请求要用的表单数据
                 addForm:{
                     goods_name:'',
                     goods_introduce:'',

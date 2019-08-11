@@ -37,6 +37,10 @@ import {
     Upload
 } from 'element-ui'
 
+// 引入时间轴文件
+import Timeline from './timeline/index.js'
+import TimelineItem from './timeline-item/index.js'
+
 Vue.use(Button)
 Vue.use(FormItem)
 Vue.use(Input)
@@ -70,5 +74,9 @@ Vue.use(TabPane)
 Vue.use(Steps)
 Vue.use(Step)
 Vue.use(Upload)
+Vue.use(Timeline)
+Vue.use(TimelineItem)
+
+// 在全局原型对象上添加$message方法
 Vue.prototype.$message = Message
 Vue.prototype.$confirm = MessageBox.confirm
