@@ -7,6 +7,10 @@ import Users from './components/user/Users.vue'
 import Rights from './components/power/Rights.vue'
 import Roles from './components/power/Roles.vue'
 import Categories from './components/goods/Categories.vue'
+import Params from './components/goods/Params.vue'
+import List from './components/goods/List.vue'
+import Add from './components/goods/Add.vue'
+
 Vue.use(Router)
 
 const router = new Router({
@@ -22,7 +26,10 @@ const router = new Router({
                 { path: '/users', component: Users },
                 { path: '/rights', component: Rights },
                 { path: '/roles', component: Roles },
-                { path: '/categories', component: Categories }
+                { path: '/categories', component: Categories },
+                { path: '/params', component: Params },
+                { path: '/goods', component: List },
+                { path: '/goods/add', component: Add }
             ]
         }
     ]
@@ -38,7 +45,7 @@ router.beforeEach((to, from, next) => {
         if (!token) {
             return next('/login')
         };
-        // 跳转到login登录界面后,可以执行放行到下一个,这个一定要写,不然页面无法正常跳转
+        // 如果没有跳转到login登录界面,说明有token,就可以执行放行到下一个,这个一定要写,不然页面无法正常跳转
         next()
     }
 })
