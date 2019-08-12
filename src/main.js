@@ -21,6 +21,10 @@ import 'quill/dist/quill.bubble.css'
 // 注册添加商品的富文本编辑器
 Vue.use(VueQuillEditor)
 
+// 导入nprogress依懒包和对应的css
+import NProgress from 'nprogress'
+import 'nprogress/nprogress.css'
+
 // 导入axios
 import axios from 'axios'
 // 配置请求的根路径
@@ -28,9 +32,17 @@ axios.defaults.baseURL = 'http://127.0.0.1:8888/api/private/v1/'
 Vue.prototype.$http = axios;
 // 设置请求拦截器,添加token
 axios.interceptors.request.use(config => {
+    // 展示进度条
+    NProgress.start();
     // console.log(config);
     // 获取登录过后生成的token值,添加到axios请求头里面,这样每次请求都会自动携带
     config.headers.Authorization = window.sessionStorage.getItem('token');
+    return config
+});
+// 设置响应拦截器,在响应成功之后处理
+axios.interceptors.response.use(config => {
+    // 隐藏进度条
+    NProgress.done();
     return config
 });
 
