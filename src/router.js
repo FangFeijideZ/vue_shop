@@ -35,7 +35,7 @@ Vue.use(Router)
 
 const router = new Router({
     routes: [
-        { path: '/', redirect: '/home' },
+        { path: '/', redirect: '/login' },
         { path: '/login', component: Login },
         {
             path: '/home',
@@ -65,7 +65,7 @@ router.beforeEach((to, from, next) => {
         // 如果不是在登录界面,就本地存储有没有token(就是看有没有登录过,登录过就有token),没有就跳转到login登录
         const token = window.sessionStorage.getItem('token');
         if (!token) {
-            return next('/home')
+            return next('/login')
         };
         // 如果没有跳转到login登录界面,说明有token,就可以执行放行到下一个,这个一定要写,不然页面无法正常跳转
         next()
